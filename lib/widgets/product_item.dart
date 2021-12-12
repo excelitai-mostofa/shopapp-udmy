@@ -3,14 +3,17 @@ part of widgets;
 class ProductItem extends StatelessWidget {
  // const ProductItem({Key? key}) : super(key: key);
 
-  final String id;
-  final String title;
-  final String imgUrl;
-
-  ProductItem(this.id, this.title, this.imgUrl);
+  // final String id;
+  // final String title;
+  // final String imgUrl;
+  //
+  // ProductItem(this.id, this.title, this.imgUrl);
 
   @override
   Widget build(BuildContext context) {
+
+    final product = Provider.of<Product>(context);
+
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
 
@@ -20,11 +23,11 @@ class ProductItem extends StatelessWidget {
             onTap: (){
               Navigator.of(context).pushNamed(
                   ProductDetailScreen.routeName,
-                  arguments: id,
+                  arguments: product.id,
               );
             },
             child: Image.network(
-              imgUrl,
+              product.imgUrl,
               fit: BoxFit.cover,
             ),
           ),
@@ -39,7 +42,7 @@ class ProductItem extends StatelessWidget {
           ),
 
           backgroundColor: Colors.black54,
-          title: Text(title, textAlign: TextAlign.center,),
+          title: Text(product.title, textAlign: TextAlign.center,),
           trailing: IconButton(
               onPressed: (){
 
