@@ -1,13 +1,7 @@
 part of widgets;
 
 class ProductItem extends StatelessWidget {
- // const ProductItem({Key? key}) : super(key: key);
 
-  // final String id;
-  // final String title;
-  // final String imgUrl;
-  //
-  // ProductItem(this.id, this.title, this.imgUrl);
 
   @override
   Widget build(BuildContext context) {
