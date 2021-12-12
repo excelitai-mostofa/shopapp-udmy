@@ -2,18 +2,21 @@ part of widgets;
 
 class ProductsGrid extends StatelessWidget {
 
+  final bool showFavs;
+
+  ProductsGrid(this.showFavs);
+
   @override
   Widget build(BuildContext context) {
-    final productData = Provider.of<Products>(context);
+    final productData = Provider.of<ProductsProvider>(context);
 
-    final products = productData.items;
+    final products = showFavs? productData.favoriteItems : productData.items;
 
     return GridView.builder(
       padding: const EdgeInsets.all(10),
       itemCount: products.length,
 
       itemBuilder: (ctx, i)=> ChangeNotifierProvider.value(
-        //create: (_) => products[i],
         value:  products[i],
         child: ProductItem(),
       ),
