@@ -1,6 +1,7 @@
 library widgets;
 
 import 'package:flutter/material.dart';
+import 'package:shopapp_udemy/providers/cart.dart';
 import 'package:shopapp_udemy/providers/product_provider.dart';
 import 'package:shopapp_udemy/screens/screens.dart';
 import '../providers/product.dart';

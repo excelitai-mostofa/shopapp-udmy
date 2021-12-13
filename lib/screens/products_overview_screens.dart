@@ -19,6 +19,8 @@ class _ProductOverviewScreensState extends State<ProductOverviewScreens> {
   @override
   Widget build(BuildContext context) {
 
+    final cart = Provider.of<Cart>(context);
+
 
     return Scaffold(
       appBar: AppBar(
@@ -31,6 +33,7 @@ class _ProductOverviewScreensState extends State<ProductOverviewScreens> {
             itemBuilder: (_) => [
               const PopupMenuItem(child: Text('Only Favorite'), value: FilterOption.Favorite,),
               const PopupMenuItem(child: Text('Show All'), value: FilterOption.All,),
+
             ],
 
             onSelected: (FilterOption selectedValue){
@@ -45,6 +48,18 @@ class _ProductOverviewScreensState extends State<ProductOverviewScreens> {
                 }
               });
               },
+          ),
+
+          Consumer<Cart>( builder: (_, cart, ch)=> Badge(
+
+            child: ch!,
+            value: cart.itemCount.toString(),
+            color: Colors.red,
+          ),
+            child: IconButton(
+                onPressed: (){},
+                icon: const Icon(Icons.shopping_cart)
+            ),
           )
         ],
       ),
