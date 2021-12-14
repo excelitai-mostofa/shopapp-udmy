@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
 
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.purple,
           fontFamily: 'Lato',
           accentColor: Colors.deepOrange,
         ),
@@ -47,6 +47,7 @@ class MyApp extends StatelessWidget {
 
         routes: {
           ProductDetailScreen.routeName: (context) => ProductDetailScreen(),
+          CartScreen.routeName: (context) => CartScreen(),
         },
 
 

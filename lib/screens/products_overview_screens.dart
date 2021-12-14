@@ -57,7 +57,9 @@ class _ProductOverviewScreensState extends State<ProductOverviewScreens> {
             color: Colors.red,
           ),
             child: IconButton(
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.of(context).pushNamed(CartScreen.routeName);
+                },
                 icon: const Icon(Icons.shopping_cart)
             ),
           )
