@@ -42,7 +42,14 @@ class CartScreen extends StatelessWidget {
 
 
                   ElevatedButton(
-                      onPressed: (){},
+                      onPressed: (){
+
+                        Provider.of<Orders>(context, listen: false).addOrder(cart.items.values.toList(), cart.totalAmount);
+
+                        cart.clear();
+
+
+                      },
                       child: const Text('Order Now', style: TextStyle(color: Colors.purple),),
                     style: ElevatedButton.styleFrom(
                       primary: Colors.white
