@@ -1,11 +1,18 @@
 part of widgets;
 
-class OrderItem extends StatelessWidget {
+class OrderItem extends StatefulWidget {
   //const OrderItems({Key? key}) : super(key: key);
 
   final OrderItems order;
 
   OrderItem(this.order);
+
+  @override
+  State<OrderItem> createState() => _OrderItemState();
+}
+
+class _OrderItemState extends State<OrderItem> {
+
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +21,11 @@ class OrderItem extends StatelessWidget {
       margin: EdgeInsets.all(10),
       child: Column(
         children: [
+
+
           ListTile(
-            title: Text('\$${order.amount}'),
-            subtitle: Text(DateFormat('dd/MM/yyyy hh:mm').format(order.dateTime)),
+            title: Text('\$${widget.order.amount}'),
+            subtitle: Text(DateFormat('dd/MM/yyyy hh:mm').format(widget.order.dateTime)),
             trailing: IconButton(
                 onPressed: (){
 
@@ -24,6 +33,9 @@ class OrderItem extends StatelessWidget {
                 icon: Icon(Icons.expand_more)
             ),
           ),
+
+
+
         ],
       ),
     );
