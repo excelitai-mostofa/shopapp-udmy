@@ -66,7 +66,7 @@ class _ProductOverviewScreensState extends State<ProductOverviewScreens> {
         ],
       ),
 
-      drawer: Appdrawer(),
+      drawer: const Appdrawer(),
 
 
       body: ProductsGrid(_showonlyFavorite),
