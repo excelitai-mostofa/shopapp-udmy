@@ -17,3 +17,4 @@ part 'cart_item.dart';
 part 'badge.dart';
 part 'order_item.dart';
 part 'app_drawer.dart';
+part 'user_product_item.dart';

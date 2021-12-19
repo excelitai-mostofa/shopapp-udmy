@@ -12,3 +12,4 @@ part 'products_overview_screens.dart';
 part 'product_details.dart';
 part 'cart_screen.dart';
 part 'orders_screen.dart';
+part 'user_products_screen.dart';

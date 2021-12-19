@@ -33,6 +33,19 @@ class Appdrawer extends StatelessWidget {
 
               Navigator.of(context).pushReplacementNamed(OrdersScreen.routeName);
             },
+          ),
+
+
+          const Divider(),
+
+
+          ListTile(
+            leading: const Icon(Icons.edit),
+            title: const Text('Manage products'),
+            onTap: (){
+
+              Navigator.of(context).pushReplacementNamed(UserProductsScreen.routeName);
+            },
           )
         ],
       ),
