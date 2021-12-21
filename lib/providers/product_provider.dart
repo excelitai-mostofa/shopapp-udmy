@@ -47,7 +47,7 @@ class ProductsProvider with ChangeNotifier {
 
 
   List<Product> get favoriteItems {
-    return _items.where((prodItem) => prodItem.isFav).toList();
+    return _items.where((prodItem) => prodItem.isFav!).toList();
   }
 
 
@@ -58,7 +58,32 @@ class ProductsProvider with ChangeNotifier {
 
 
 
-  void addProduct(){
+  void addProduct(Product product){
+    final newProduct = Product(
+        id: DateTime.now().toString(),
+        title: product.title,
+        description: product.description,
+        price: product.price,
+        imgUrl: product.imgUrl
+    );
+    _items.add(newProduct);
+    //_items.insert(0, newProduct);
     notifyListeners();
   }
+
+
+
+  void updateProduct(String id , Product newProduct){
+    final prodIndex = _items.indexWhere((prod) => prod.id == id);
+    if (prodIndex >= 0) {
+      _items[prodIndex] = newProduct;
+      notifyListeners();
+    } else {
+      print('...');
+    }
+  }
+
+
+
+
 }
