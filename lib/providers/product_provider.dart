@@ -61,10 +61,10 @@ class ProductsProvider with ChangeNotifier {
   void addProduct(Product product){
     final newProduct = Product(
         id: DateTime.now().toString(),
-        title: product.title,
-        description: product.description,
-        price: product.price,
-        imgUrl: product.imgUrl
+        title: product.title ?? '',
+        description: product.description ?? '',
+        price: product.price ?? 0,
+        imgUrl: product.imgUrl ?? ''
     );
     _items.add(newProduct);
     //_items.insert(0, newProduct);
@@ -81,6 +81,13 @@ class ProductsProvider with ChangeNotifier {
     } else {
       print('...');
     }
+  }
+
+
+
+  void deleteProduct(String id) {
+    _items.removeWhere((prod) => prod.id == id);
+    notifyListeners();
   }
 
 
